@@ -1,0 +1,25 @@
+
+
+<div class="modal-body row">
+    <div class = "col-md-6 text-center">
+      <h1>My Genre</h1>
+      <%= @genre.name %><br>
+
+      <button type="button" class="btn-outline-primary">
+        <%= link_to 'Edit', edit_genre_path(@genre) %>
+      </button>
+      <button type="button" class="btn-outline-primary">
+        <%= link_to 'All Genres', genres_path %>
+      </button>
+      <button type="button" class="btn-outline-primary">
+        <%= link_to 'Delete', genre_path(@genre), method:'delete' %>
+      </button>
+   </div>
+
+   <div class = "col-md-6 text-center">
+      <h1>Songs</h1>
+      <%@genre.songs.each do |song| %>
+        <h1><%= song.name %></h1>
+      <% end %>
+   </div>
+</div>

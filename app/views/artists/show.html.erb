@@ -1,0 +1,33 @@
+
+
+<div class="modal-body row">
+    <div class = "col-md-4 text-center">
+      <h1>My Artist</h1>
+      <%= @artist.name %><br>
+      <p><%= @artist.bio %></p><br>
+
+      <button type="button" class="btn-outline-primary">
+        <%= link_to 'Edit', edit_artist_path(@artist) %>
+      </button>
+      <button type="button" class="btn-outline-primary">
+        <%= link_to 'All Artists', artists_path %>
+      </button>
+      <button type="button" class="btn-outline-warning">
+        <%= link_to 'Delete', artist_path(@artist), method:'delete' %>
+      </button>
+   </div>
+
+   <div class = "col-md-4 text-center">
+      <h1>Songs</h1>
+      <%@artist.songs.each do |song| %>
+        <h1><%= song.name %></h1>
+      <% end %>
+   </div>
+
+   <div class = "col-md-4 text-center">
+      <h1><%= @artist.name %>'s Genres </h1>
+      <%@artist.genres.each do |genre| %>
+        <h1><%= genre.name %></h1>
+      <% end %>
+   </div>
+</div>
